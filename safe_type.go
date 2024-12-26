@@ -76,3 +76,11 @@ func (type2 *safeType) UnsafeSet(ptr unsafe.Pointer, val unsafe.Pointer) {
 func (type2 *safeType) AssignableTo(anotherType Type) bool {
 	return type2.Type1().AssignableTo(anotherType.Type1())
 }
+
+func (type2 *safeType) Method(int) reflect.Method {
+	panic("do not use Method")
+}
+
+func (type2 *safeType) MethodByName(string) (reflect.Method, bool) {
+	panic("do not use MethodByName")
+}
